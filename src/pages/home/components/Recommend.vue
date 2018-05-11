@@ -1,7 +1,7 @@
 <template>
   <div>
       <div class="recommend-title">热销推荐</div>
-      <ul>
+      <ul :v-if="recommendList.length">
             <li class="item border-bottom" v-for="item of recommendList" :key="item.id">
                 <div class="item-img-wrapper">
                     <img :src="item.imgUrl" alt="" class="item-img"/>
@@ -18,31 +18,34 @@
 <script>
 export default {
   name: 'HomeRecommend',
-  data () {
-    return {
-      recommendList: [{
-        id: '0001',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1803/7b/7b023b9728f0834fa3.img.jpg_200x200_5fddc1d8.jpg',
-        title: '世界花卉大观园',
-        desc: '3987条评论'
-      }, {
-        id: '0002',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1803/7b/7b023b9728f0834fa3.img.jpg_200x200_5fddc1d8.jpg',
-        title: '世界花卉大观园',
-        desc: '3987条评论'
-      }, {
-        id: '0003',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1803/7b/7b023b9728f0834fa3.img.jpg_200x200_5fddc1d8.jpg',
-        title: '世界花卉大观园',
-        desc: '3987条评论'
-      }, {
-        id: '0004',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1803/7b/7b023b9728f0834fa3.img.jpg_200x200_5fddc1d8.jpg',
-        title: '世界花卉大观园',
-        desc: '3987条评论'
-      }]
-    }
+  props: {
+    recommendList: Array
   }
+  // data () {
+  //   return {
+  //     recommendList: [{
+  //       id: '0001',
+  //       imgUrl: 'http://img1.qunarzz.com/sight/p0/1803/7b/7b023b9728f0834fa3.img.jpg_200x200_5fddc1d8.jpg',
+  //       title: '世界花卉大观园',
+  //       desc: '3987条评论'
+  //     }, {
+  //       id: '0002',
+  //       imgUrl: 'http://img1.qunarzz.com/sight/p0/1803/7b/7b023b9728f0834fa3.img.jpg_200x200_5fddc1d8.jpg',
+  //       title: '世界花卉大观园',
+  //       desc: '3987条评论'
+  //     }, {
+  //       id: '0003',
+  //       imgUrl: 'http://img1.qunarzz.com/sight/p0/1803/7b/7b023b9728f0834fa3.img.jpg_200x200_5fddc1d8.jpg',
+  //       title: '世界花卉大观园',
+  //       desc: '3987条评论'
+  //     }, {
+  //       id: '0004',
+  //       imgUrl: 'http://img1.qunarzz.com/sight/p0/1803/7b/7b023b9728f0834fa3.img.jpg_200x200_5fddc1d8.jpg',
+  //       title: '世界花卉大观园',
+  //       desc: '3987条评论'
+  //     }]
+  //   }
+  // }
 }
 </script>
 <style lang="stylus" scoped>
